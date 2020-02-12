@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "fashionShow": "/pages/fashionShow/index/index",
+    "systemManagement": "/pages/systemManagement/index/index"
+  }
+}

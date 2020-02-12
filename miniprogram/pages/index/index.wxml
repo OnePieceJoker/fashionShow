@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-pink" isOther="{{!isLogin}}"><view slot="otherView">
+<text class="cuIcon-repair" bindtap="goToLogin"></text>
+</view><view slot="content">服装设计工厂</view></cu-custom>
+<!-- <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-homefill text-gray"></text> 首页
+    </view>
+    <view class="content text-bold">
+      服装设计工厂
+    </view>
+    <view class="action">
+      <text class="cuIcon-cardboardfill text-grey"></text>
+      <text class="cuIcon-recordfill text-red"></text>
+    </view>
+</view> -->
+<!--展示页面-->
+<fashionShow wx:if="{{PageCur == 'fashionShow'}}"></fashionShow>
+<!--内容编辑页面-->
+<!-- <contentEdit wx:if="{{PageCur == 'contentEdit'}}"></contentEdit> -->
+<!--系统管理页面-->
+<systemManagement wx:if="{{PageCur == 'systemManagement'}}"></systemManagement>
+
+<!--底部导航栏，用户登录后展示-->
+<block wx:if="{{isLogin}}">
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="fashionShow">
+    <view class='cuIcon-cu-image'>
+      <!-- <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image> -->
+      <text class="cuIcon-clothesfill {{PageCur=='fashionShow'?'text-green':'text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='fashionShow'?'text-green':'text-gray'}}">商品</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="contentEdit">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-upstagefill {{PageCur=='contentEdit'?'text-green':'text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='contentEdit'?'text-green':'text-gray'}}">内容</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="systemManagement">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-settingsfill {{PageCur=='systemManagement'?'text-green':'text-gray'}}"></text>
+    </view>
+    <view class="{{PageCur=='systemManagement'?'text-green':'text-gray'}}">系统</view>
+  </view>
+</view>
+</block>
